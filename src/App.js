@@ -23,20 +23,20 @@ function App() {
         setdata(data => [...data, ...myJson.colleges.slice(start,end)])
       });
     }
+
+    async function handleScroll() {
+      if(window.scrollY>1200) {
+        if(start<50) {
+          setstart(start => start+10)
+          setend(end => end+10)
+        }
+      }
+    }
+
     window.addEventListener('scroll', () => handleScroll());
     getData()
 
   }, [start,end]);
-
-  const handleScroll = (e) => {
-    if(window.scrollY>1200) {
-      console.log("I am here")
-      if(start<50) {
-        setstart(start => start+10)
-        setend(end => end+10)
-      }
-    }
-  }
 
   return ( <div>
       <p className="page_title_style">Colleges in North India</p>
