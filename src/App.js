@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 import CardLayout from './components/cardLayout';
-import data from './data/data.json';
 
 function App() {
 
